@@ -46,13 +46,13 @@ const Services = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[6px]"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10"
         >
           {services.map((item, index) => {
             return (
               <div
                 key={index}
-                className="flex flex-1 flex-col justify-center gap-6 group"
+                className="flex flex-1 flex-col justify-center group gap-9"
               >
                 {/* top */}
                 <div className="w-full flex justify-between items-center">
