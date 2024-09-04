@@ -12,7 +12,7 @@ const Photo = () => {
         }}
       >
         {/* image */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -29,7 +29,8 @@ const Photo = () => {
             alt=""
             className="object-contain"
           />
-        </motion.div>
+        </motion.div> */}
+
         {/* circle */}
         <motion.svg
           className="w-[300px] xl:w-[506px] xl:h-[300px]"

@@ -29,6 +29,7 @@ const Home = () => {
               size="lg"
               className="uppercase flex items-center gap-2"
             >
+              {/* below placeholder replaced with a component */}
               {/* <span>Download CV</span> */}
               <DownloadCV />
 
