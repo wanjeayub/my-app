@@ -34,8 +34,23 @@ const info = [
 ];
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Contact = () => {
+  const [form, setForm] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phoneNumber: "",
+    selectItem: "",
+    textArea: "",
+  });
+
+  const handleChange = (e) => {
+    e.target.preventDefault();
+    setForm({ ...form });
+  };
+  const handleSubmit = () => {};
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -49,7 +64,10 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:h-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+            <form
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+              onSubmit={handleSubmit}
+            >
               <h3 className="text-4xl text-accent">Let&#39;s work together</h3>
               <p className="text-white/60">
                 I am currently open for both short term and long term projects.
@@ -59,10 +77,31 @@ const Contact = () => {
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="First Name" />
-                <Input type="lastname" placeholder="Last Name" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="phone" placeholder="Phone Number" />
+                <Input
+                  type="firstname"
+                  placeholder="First Name"
+                  name="firstname"
+                  value="value"
+                  onChange={handleChange}
+                />
+                <Input
+                  type="lastname"
+                  placeholder="Last Name"
+                  id="lastname"
+                  onChange={handleChange}
+                />
+                <Input
+                  type="email"
+                  placeholder="Email address"
+                  id="email"
+                  onChange={handleChange}
+                />
+                <Input
+                  type="phone"
+                  placeholder="Phone Number"
+                  id="firstname"
+                  onChange={handleChange}
+                />
               </div>
               {/* select */}
               <Select>
@@ -82,6 +121,7 @@ const Contact = () => {
               <Textarea
                 className="h-[200px]"
                 placeholder="Type your message here"
+                id="textarea"
               />
               <Button className="max-w-40">Send Message</Button>
             </form>
