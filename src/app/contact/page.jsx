@@ -81,25 +81,28 @@ const Contact = () => {
                   type="firstname"
                   placeholder="First Name"
                   name="firstname"
-                  value="value"
+                  value={form.firstname}
                   onChange={handleChange}
                 />
                 <Input
                   type="lastname"
                   placeholder="Last Name"
                   id="lastname"
+                  value={form.lastname}
                   onChange={handleChange}
                 />
                 <Input
                   type="email"
                   placeholder="Email address"
                   id="email"
+                  value={form.email}
                   onChange={handleChange}
                 />
                 <Input
                   type="phone"
                   placeholder="Phone Number"
                   id="firstname"
+                  value={form.phoneNumber}
                   onChange={handleChange}
                 />
               </div>
@@ -122,6 +125,7 @@ const Contact = () => {
                 className="h-[200px]"
                 placeholder="Type your message here"
                 id="textarea"
+                value={form.textArea}
               />
               <Button className="max-w-40">Send Message</Button>
             </form>
