@@ -22,7 +22,7 @@ import {
 const about = {
   title: "About me",
   description:
-    "I am a very hardworking self proclaimed web developer that is currently running away from responsibilities",
+    "I am a very hardworking, project-proofed web developer that strives to push technology to achieve desired solutions",
   info: [
     {
       fieldName: "Name",
@@ -59,47 +59,28 @@ const about = {
 const experience = {
   icon: "",
   title: "My Experience",
-  description: "This is a sample project for the experience required",
+  description:
+    "This is a summary of the vast experience I have amassed in the different roles allocated.",
   items: [
     {
-      company: "First Company",
+      company: "Thermax Global ltd (Vipingo Industries)",
       position: "Fullstack Web Developer",
-      duration: "2023 - Present",
+      duration: "Jan 2024 - Present",
     },
     {
-      company: "Second Company",
-      position: "Front End web Developer",
-      duration: "2022 - 2023",
+      company: "Devki Steel Mills (Samburu Msa)",
+      position: "Snr Backend Engineer",
+      duration: "July 2019 - Jan 2024",
     },
     {
-      company: "Third Company",
-      position: "Backend Developer",
-      duration: "2023 - Present",
+      company: "Kenya Coast National Polytechnic",
+      position: "Part-Time Trainer",
+      duration: "March 2017 - June 2019",
     },
     {
-      company: "Third Company",
+      company: "Nelmasoft ltd",
       position: "Fullstack Web Developer",
-      duration: "2023 - Present",
-    },
-    {
-      company: "Third Company",
-      position: "Fullstack Web Developer",
-      duration: "2023 - Present",
-    },
-    {
-      company: "Third Company",
-      position: "Fullstack Web Developer",
-      duration: "2023 - Present",
-    },
-    {
-      company: "Third Company",
-      position: "Fullstack Web Developer",
-      duration: "2023 - Present",
-    },
-    {
-      company: "Third Company",
-      position: "Fullstack Web Developer",
-      duration: "2023 - Present",
+      duration: "2015 - 2018",
     },
   ],
 };
@@ -116,17 +97,13 @@ const education = {
       degree: "Bsc Electrical and Electrical Engineering",
       duration: "2016",
     },
-    {
-      institution: "Technical University of Mombasa",
-      degree: "Bsc Electrical and Electrical Engineering",
-      duration: "2016",
-    },
   ],
 };
 // skills
 const skills = {
   title: "My Skills",
-  description: "am as good as they come",
+  description:
+    "This is a collection of the technologies, tools and frameworks that I use on per project basis",
   skillList: [
     {
       icon: <FaHtml5 />,
