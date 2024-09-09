@@ -37,7 +37,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Contact = () => {
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
     email: "",
@@ -47,10 +47,34 @@ const Contact = () => {
   });
 
   const handleChange = (e) => {
-    e.target.preventDefault();
-    setForm({ ...form });
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
-  const handleSubmit = () => {};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        alert("Email sent successfully!");
+      } else {
+        alert("Error sending email: " + result.error);
+      }
+    } catch (error) {
+      alert("Error sending email: " + error.message);
+    }
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
