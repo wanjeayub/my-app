@@ -1,6 +1,5 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+
 import { Textarea } from "@/components/ui/textarea";
 
 import {
@@ -37,42 +36,16 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-    phoneNumber: "",
-    selectItem: "",
-    textArea: "",
-  });
+  const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [e.target.id]: e.target.value,
     });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-      if (response.ok) {
-        alert("Email sent successfully!");
-      } else {
-        alert("Error sending email: " + result.error);
-      }
-    } catch (error) {
-      alert("Error sending email: " + error.message);
-    }
   };
 
   return (
@@ -101,57 +74,62 @@ const Contact = () => {
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input
-                  type="firstname"
+                <input
+                  className="flex h-[48px] rounded-md border border-white/10 focus:border-accent font-light bg-primary px-4 py-5 text-base placeholder:text-white/60 outline-none"
+                  type="text"
                   placeholder="First Name"
-                  name="firstname"
-                  value={form.firstname}
+                  id="firstname"
                   onChange={handleChange}
                 />
-                <Input
-                  type="lastname"
+                <input
+                  className="flex h-[48px] rounded-md border border-white/10 focus:border-accent font-light bg-primary px-4 py-5 text-base placeholder:text-white/60 outline-none"
+                  type="text"
                   placeholder="Last Name"
                   id="lastname"
-                  value={form.lastname}
                   onChange={handleChange}
                 />
-                <Input
+
+                <input
+                  className="flex h-[48px] rounded-md border border-white/10 focus:border-accent font-light bg-primary px-4 py-5 text-base placeholder:text-white/60 outline-none"
                   type="email"
                   placeholder="Email address"
                   id="email"
-                  value={form.email}
                   onChange={handleChange}
                 />
-                <Input
+                <input
+                  className="flex h-[48px] rounded-md border border-white/10 focus:border-accent font-light bg-primary px-4 py-5 text-base placeholder:text-white/60 outline-none"
                   type="phone"
                   placeholder="Phone Number"
-                  id="firstname"
-                  value={form.phoneNumber}
+                  id="phone"
                   onChange={handleChange}
                 />
               </div>
               {/* select */}
-              <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="mst">Logo Design</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+              <select
+                className="flex h-[70px] w-full items-center justify-between rounded-md border border-white/10 bg-primary px-4 py-5 text-base text-white/60 placeholder:text-white/10 focus:border-accent outline-none"
+                name="options"
+                id="my-options"
+              >
+                <option className="px-3" value="web">
+                  Web Development
+                </option>
+                <option value="ui-ux">UI/UX</option>
+                <option value="logo">Logo Design</option>
+              </select>
+
               {/* text area */}
-              <Textarea
-                className="h-[200px]"
+              <textarea
+                className="flex min-h-[80px] w-full rounded-md border border-white/10 bg-primary px-4 py-5 text-base placeholder:text-white/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50"
                 placeholder="Type your message here"
                 id="textarea"
-                value={form.textArea}
+                value={formData.textArea}
               />
-              <Button className="max-w-40">Send Message</Button>
+              <button
+                onClick={handleSubmit}
+                className="max-w-40 bg-accent text-primary hover:bg-accent-hover py-3 rounded-lg"
+              >
+                Send Message
+              </button>
             </form>
           </div>
           {/* info */}
