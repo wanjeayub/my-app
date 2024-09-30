@@ -45,12 +45,15 @@ const Contact = () => {
         process.env.NEXT_PUBLIC_EMAILJS_USER_ID
       )
       .then(
-        (result) => {
-          console.log(result.text);
+        (formData) => {
+          () => {
+            console.log(formData);
+            console.log("hello");
+          };
           alert("Message sent successfully!");
         },
         (error) => {
-          console.log(error.text);
+          console.log(error);
           alert("Failed to send message.");
         }
       );
