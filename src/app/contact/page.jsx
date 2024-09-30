@@ -1,6 +1,7 @@
 "use client";
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const info = [
   {
