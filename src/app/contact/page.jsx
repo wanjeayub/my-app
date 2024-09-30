@@ -72,90 +72,92 @@ const Contact = () => {
           <div className="xl:h-[54%] order-2 xl:order-none">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="mt-1 block w-full border border-gray-300 p-2 rounded-md"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="mt-1 block w-full border border-gray-300 p-2 rounded-md bg-gray-500"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="mt-1 block w-full border border-gray-300 p-2 rounded-md"
-                  placeholder="Enter your email"
-                  required
-                />
-              </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="mt-1 block w-full border border-gray-300 p-2 rounded-md bg-gray-500"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Phone
-                </label>
-                <input
-                  type="text"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="mt-1 block w-full border border-gray-300 p-2 rounded-md"
-                  placeholder="Enter your phone number"
-                  required
-                />
-              </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Phone
+                  </label>
+                  <input
+                    type="text"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="mt-1 block w-full border border-gray-300 p-2 rounded-md bg-gray-500"
+                    placeholder="Enter your phone number"
+                    required
+                  />
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Service
-                </label>
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  className="mt-1 block w-full border border-gray-300 p-2 rounded-md"
-                  required
-                >
-                  <option value="" disabled>
-                    Select a service
-                  </option>
-                  <option value="UI/UX Design">UI/UX Design</option>
-                  <option value="Logo Design">Logo Design</option>
-                  <option value="Web Development">Web Development</option>
-                </select>
-              </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Service
+                  </label>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="mt-1 block w-full border border-gray-300 p-2 rounded-md bg-gray-500"
+                    required
+                  >
+                    <option value="" disabled>
+                      Select a service
+                    </option>
+                    <option value="UI/UX Design">UI/UX Design</option>
+                    <option value="Logo Design">Logo Design</option>
+                    <option value="Web Development">Web Development</option>
+                  </select>
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="mt-1 block w-full border border-gray-300 p-2 rounded-md"
-                  placeholder="Enter your message (optional)"
-                />
-              </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="mt-1 block w-full border border-gray-300 p-2 rounded-md bg-gray-500"
+                    placeholder="Enter your message (optional)"
+                  />
+                </div>
 
-              <div className="text-center">
-                <button
-                  type="submit"
-                  className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-                >
-                  Send Message
-                </button>
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+                  >
+                    Send Message
+                  </button>
+                </div>
               </div>
             </form>
           </div>
