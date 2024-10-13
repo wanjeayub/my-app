@@ -2,6 +2,7 @@
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
+// import { toast } from "react-toastify";
 
 const info = [
   {
@@ -23,40 +24,58 @@ const info = [
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+// import { Button } from "@/components/ui/button";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({});
+  const [userInput, setUserInput] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  // const [formData, setFormData] = useState({});
 
+  // handle changes
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.id]: e.target.value,
+    const { name, value } = e.target;
+    setUserInput({
+      ...userInput,
+      [name]: value,
     });
   };
+
   // handlesubmit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        formData,
-        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
-      )
-      .then(
-        (formData) => {
-          () => {
-            console.log(formData);
-            console.log("hello");
-          };
-          alert("Message sent successfully!");
-        },
-        (error) => {
-          console.log(error);
-          alert("Failed to send message.");
-        }
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const userID = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    try {
+      const emailParams = {
+        name: userInput.name,
+        email: userInput.email,
+        message: userInput.message,
+      };
+
+      const res = await emailjs.send(
+        serviceID,
+        templateID,
+        emailParams,
+        userID
       );
+
+      if (res.status === 200) {
+        alert("Email sent successfully!");
+        setUserInput({
+          name: "",
+          email: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      alert("Failed to send email, use direct email instead. Thank you");
+    }
   };
 
   return (
@@ -72,96 +91,43 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
 
-          <div className="xl:h-[54%] order-2 xl:order-none">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="mt-1 block w-full border border-gray-300 p-2 rounded-md bg-gray-500"
-                    placeholder="Enter your name"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="mt-1 block w-full border border-gray-300 p-2 rounded-md bg-gray-500"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Phone
-                  </label>
-                  <input
-                    type="text"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="mt-1 block w-full border border-gray-300 p-2 rounded-md bg-gray-500"
-                    placeholder="Enter your phone number"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Service
-                  </label>
-                  <select
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="mt-1 block w-full border border-gray-300 p-2 rounded-md bg-gray-500"
-                    required
-                  >
-                    <option value="" disabled>
-                      Select a service
-                    </option>
-                    <option value="UI/UX Design">UI/UX Design</option>
-                    <option value="Logo Design">Logo Design</option>
-                    <option value="Web Development">Web Development</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="mt-1 block w-full border border-gray-300 p-2 rounded-md bg-gray-500"
-                    placeholder="Enter your message (optional)"
-                  />
-                </div>
-
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-                  >
-                    Send Message
-                  </button>
-                </div>
+          <div className="flex gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <div className="flex flex-col">
+                <label>Your Name:</label>
+                <input
+                  className="bg-slate-500 p-2"
+                  type="text"
+                  name="name"
+                  value={userInput.name}
+                  onChange={handleChange}
+                  required
+                />
               </div>
+              <div className="flex flex-col">
+                <label>Your Email:</label>
+                <input
+                  className="bg-slate-500 p-2"
+                  type="email"
+                  name="email"
+                  value={userInput.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="flex flex-col">
+                <label>Your Message:</label>
+                <textarea
+                  className="bg-slate-500 p-2"
+                  name="message"
+                  value={userInput.message}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <button type="submit" className="bg-[#27272c] p-2 rounded-md">
+                Send Message
+              </button>
             </form>
           </div>
 
