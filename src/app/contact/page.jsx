@@ -53,8 +53,9 @@ const Contact = () => {
 
     try {
       const emailParams = {
-        name: userInput.name,
-        email: userInput.email,
+        from_name: userInput.name,
+        to_name: "ayub",
+        reply_to: userInput.email,
         message: userInput.message,
       };
 
