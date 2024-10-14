@@ -47,9 +47,9 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const userID = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    const serviceID = process.env.NEXT_EMAILJS_SERVICE_ID;
+    const templateID = process.env.NEXT_EMAILJS_TEMPLATE_ID;
+    const publicKEY = process.env.NEXT_EMAILJS_PUBLIC_KEY;
 
     try {
       const emailParams = {
@@ -62,7 +62,7 @@ const Contact = () => {
         serviceID,
         templateID,
         emailParams,
-        userID
+        publicKEY
       );
 
       if (res.status === 200) {
