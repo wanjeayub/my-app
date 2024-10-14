@@ -74,6 +74,7 @@ const Contact = () => {
         });
       }
     } catch (error) {
+      console.log(error);
       alert("Failed to send email, use direct email instead. Thank you");
     }
   };
