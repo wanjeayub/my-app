@@ -88,15 +88,18 @@ const Contact = () => {
       className="py-6"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-[30px]">
+        <div className="flex flex-col xl:flex-row gap-4 ">
           {/* form */}
 
           <div className="flex gap-4">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-4 justify-center"
+            >
               <div className="flex flex-col">
                 <label>Your Name:</label>
                 <input
-                  className="bg-slate-500 p-2"
+                  className="bg-[#27272c] p-2 md:w-[500px] w-[450px]"
                   type="text"
                   name="name"
                   value={userInput.name}
@@ -107,7 +110,7 @@ const Contact = () => {
               <div className="flex flex-col">
                 <label>Your Email:</label>
                 <input
-                  className="bg-slate-500 p-2"
+                  className="bg-[#27272c] p-2"
                   type="email"
                   name="email"
                   value={userInput.email}
@@ -118,14 +121,17 @@ const Contact = () => {
               <div className="flex flex-col">
                 <label>Your Message:</label>
                 <textarea
-                  className="bg-slate-500 p-2"
+                  className="bg-[#27272c] p-2"
                   name="message"
                   value={userInput.message}
                   onChange={handleChange}
                   required
                 />
               </div>
-              <button type="submit" className="bg-[#27272c] p-2 rounded-md">
+              <button
+                type="submit"
+                className="bg-accent p-2 rounded-md w-[200px]"
+              >
                 Send Message
               </button>
             </form>
