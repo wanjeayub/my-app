@@ -8,28 +8,28 @@ const services = [
     num: "01",
     title: "Web Development",
     description:
-      "I design websites that are very interesting, imagine giving me a job that will surely give me money to pay my debts",
+      "I am a web developer with expertise in creating dynamic, responsive websites and applications. I specialize in building user-friendly interfaces and efficient backend systems using modern technologies like React, Vite, Tailwind CSS, and Node.js",
     href: "",
   },
   {
     num: "02",
     title: "UI/UX Design",
     description:
-      "I design websites that are very interesting, imagine giving me a job that will surely give me money to pay my debts",
+      "I offer UI/UX design services focused on creating intuitive, visually appealing, and user-centered experiences. With a keen eye for detail, I design interfaces that are both functional and aesthetically pleasing, ensuring seamless interaction and user satisfaction",
     href: "",
   },
   {
     num: "03",
     title: "Logo Design",
     description:
-      "I design websites that are very interesting, imagine giving me a job that will surely give me money to pay my debts",
+      "I provide logo design services that create unique, memorable brand identities. By blending creativity with strategy, I craft logos that effectively represent your brand’s values and resonate with your target audience.",
     href: "",
   },
   {
     num: "04",
     title: "SEO",
     description:
-      "I design websites that are very interesting, imagine giving me a job that will surely give me money to pay my debts",
+      "I offer SEO services to help improve your website's visibility and search engine ranking. Through strategic optimization, I enhance your site’s content, structure, and performance to drive organic traffic and boost online presence.",
     href: "",
   },
 ];

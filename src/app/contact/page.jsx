@@ -93,7 +93,7 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-4 ">
           {/* form */}
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 py-4">
             <form
               onSubmit={handleSubmit}
               className="flex flex-col gap-4 justify-center"
