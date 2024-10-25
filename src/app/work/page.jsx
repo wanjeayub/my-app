@@ -69,50 +69,6 @@ const projects = [
     live: "https://wanjez.vercel.app/",
     github: "https://github.com/wanjeayub/my-app",
   },
-  {
-    num: "03",
-    category: "fullstack",
-    title: "project 2",
-    description: "will add description later  though its interesting",
-    stack: [
-      {
-        name: "Html 5",
-      },
-      {
-        name: "Css",
-      },
-      {
-        name: "Javascript",
-      },
-      {
-        name: "Node Js",
-      },
-    ],
-    image: "/assets/project-images/project-02.png",
-    live: "",
-    github: "",
-  },
-  {
-    num: "04",
-    category: "Frontend",
-    title: "Portfolio Project",
-    description:
-      "This is my personal portfolio project to showcase my skills. I used NextJS for this to experiment with vercels' infrastructure from development to deployment",
-    stack: [
-      {
-        name: "NextJS",
-      },
-      {
-        name: "Tailwind CSS",
-      },
-      {
-        name: "Framer Motion",
-      },
-    ],
-    image: "/assets/project-images/project-02-thumb.png",
-    live: "https://wanjez.vercel.app/",
-    github: "https://github.com/wanjeayub/my-app",
-  },
 ];
 
 const Work = () => {
