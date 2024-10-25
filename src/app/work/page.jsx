@@ -73,26 +73,24 @@ const projects = [
   },
   {
     num: "03",
-    category: "fullstack",
-    title: "project 3",
-    description: "will add description later  though its interesting",
+    category: "Frontend",
+    title: "Portfolio Project",
+    description:
+      "This is my personal portfolio project to showcase my skills. I used NextJS for this to experiment with vercels' infrastructure from development to deployment",
     stack: [
       {
-        name: "Html 5",
+        name: "NextJS",
       },
       {
-        name: "Css",
+        name: "Tailwind CSS",
       },
       {
-        name: "Javascript",
-      },
-      {
-        name: "Node Js",
+        name: "Framer Motion",
       },
     ],
-    image: "/assets/project-images/project-03.png",
-    live: "",
-    github: "",
+    image: "/assets/project-images/project-02-thumb.png",
+    live: "https://wanjez.vercel.app/",
+    github: "https://github.com/wanjeayub/my-app",
   },
   {
     num: "04",
