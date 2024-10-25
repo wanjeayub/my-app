@@ -23,23 +23,30 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "frontend project",
-    title: "project 1",
-    description: "will add description later",
+    category: "Fullstack",
+    title: "Loan Application",
+    description:
+      "This is an active project for a client who wanted users to be able to apply for loans through the platform. Loans can be approved from the platform and upon full repayment, users can be able to apply for another loan",
     stack: [
       {
-        name: "Html 5",
+        name: "ReactJS",
       },
       {
-        name: "Css",
+        name: "Tailwind css",
       },
       {
-        name: "Javascript",
+        name: "MongoDB",
+      },
+      {
+        name: "ExpressJS",
+      },
+      {
+        name: "NodeJS",
       },
     ],
-    image: "/assets/project-images/project-01.png",
-    live: "",
-    github: "",
+    image: "/assets/project-images/project-01-thumb.png",
+    live: "https://gammaridge-1.onrender.com/",
+    github: "https://github.com/wanjeayub/gammaridge",
   },
   {
     num: "02",
