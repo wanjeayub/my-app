@@ -45,7 +45,7 @@ const projects = [
       },
     ],
     image: "/assets/project-images/project-01-thumb.png",
-    live: "https://gammaridge-1.onrender.com/",
+    live: "https://gammaridge.vercel.app/",
     github: "https://github.com/wanjeayub/gammaridge",
   },
   {
