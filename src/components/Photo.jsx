@@ -1,39 +1,41 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+
 const Photo = () => {
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
           transition: { delay: 2, duration: 0.4, ease: "easeIn" },
         }}
+        className="relative w-[300px] h-[300px] xl:w-[506px] xl:h-[506px]"
       >
-        {/* image */}
+        {/* Image */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
           }}
-          //   add mix blend to the class
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] absolute"
+          className="absolute inset-0 z-10"
         >
           <Image
-            src="/assets/profile.jpg"
+            src="/profile.jpg" // Make sure the image is in the public folder
             priority
             quality={100}
             fill
-            alt=""
-            className="object-contain"
+            alt="Ayub Wanje"
+            className="object-cover rounded-full" // Changed to object-cover for better fit
+            sizes="(max-width: 768px) 298px, 498px"
           />
         </motion.div>
 
-        {/* circle */}
+        {/* Circle SVG Animation */}
         <motion.svg
-          className="w-[300px] xl:w-[506px] xl:h-[300px]"
+          className="w-full h-full absolute top-0 left-0"
           fill="transparent"
           viewBox="0 0 506 506"
           xmlns="http://www.w3.org/2000/svg"
@@ -41,8 +43,8 @@ const Photo = () => {
           <motion.circle
             cx="253"
             cy="253"
-            r="250"
-            stroke="#1c1c22"
+            r="240" // Reduced from 250 to give some padding
+            stroke="#00ff99" // Changed to accent color for better visibility
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
