@@ -23,7 +23,7 @@ const Photo = () => {
           className="absolute inset-0 z-10"
         >
           <Image
-            src="/profile.jpg" // Make sure the image is in the public folder
+            src="/Profile.jpg" // Make sure the image is in the public folder
             priority
             quality={100}
             fill
